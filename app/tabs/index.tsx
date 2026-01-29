@@ -16,7 +16,9 @@ import Colors from "@/constants/colors";
 import { categories, products } from "@/mocks/products";
 
 const { width } = Dimensions.get("window");
-const CARD_WIDTH = (width - 35) / 4;
+const CARD_WIDTH = (width - 20) / 4;
+
+const PADDING = 15;
 const CARD_HEIGHT = CARD_WIDTH * 1.4;
 const PROMO_CARD_WIDTH = Math.min(width * 0.4, 160);
 const LOGO_WIDTH = Math.min(width * 0.7, 280);
@@ -195,9 +197,11 @@ const styles = StyleSheet.create({
   },
   sectionHeader: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     marginBottom: 16,
+    width: "100%",
+    position: "relative",
   },
   sectionTitle: {
     fontSize: 22,
@@ -208,16 +212,20 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 2 },
     textShadowRadius: 4,
     letterSpacing: 0.5,
+    textAlign: "center",
   },
   seeAll: {
     fontSize: 14,
     color: Colors.gold,
     fontWeight: "600" as const,
+    position: "absolute",
+    left: 300,
   },
   categoriesGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 12,
+    justifyContent: "center",
   },
   categoryCard: {
     width: CARD_WIDTH,
@@ -241,16 +249,15 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.35)",
   },
   categoryTextContainer: {
-    position: "absolute",
-    bottom: 12,
-    left: 12,
-    right: 12,
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: "center",
+    alignItems: "center",
   },
   categoryName: {
     fontSize: 12,
     fontWeight: "700" as const,
     color: Colors.white,
-    textAlign: "left",
+    textAlign: "center",
     textShadowColor: "rgba(0, 0, 0, 0.9)",
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 4,
@@ -259,8 +266,10 @@ const styles = StyleSheet.create({
     lineHeight: 16,
   },
   promoScroll: {
-    paddingRight: 16,
+    paddingHorizontal: 16,
     gap: 12,
+    justifyContent: "center",
+    flexGrow: 1,
   },
   promoCard: {
     width: PROMO_CARD_WIDTH,

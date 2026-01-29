@@ -145,7 +145,7 @@ export default function ProductScreen() {
                         activeOpacity={0.8}
                       >
                         <Image
-                          source={{ uri: item.image }}
+                          source={item.image}
                           style={styles.relatedImage}
                         />
                         <Text style={styles.relatedName} numberOfLines={2}>
