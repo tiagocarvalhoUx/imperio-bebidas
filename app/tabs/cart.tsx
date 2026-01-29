@@ -13,7 +13,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
-import { Trash2, Minus, Plus, ShoppingBag } from "lucide-react-native";
+import { Ionicons } from "@expo/vector-icons";
 import Colors from "@/constants/colors";
 import { useCart } from "@/contexts/CartContext";
 import { PaymentMethod } from "@/types";
@@ -80,7 +80,7 @@ ${items.map((item) => `${item.quantity}x ${item.product.name} - R$ ${(item.produ
           <Text style={styles.title}>Carrinho</Text>
         </View>
         <View style={styles.emptyContainer}>
-          <ShoppingBag size={80} color={Colors.gray} />
+          <Ionicons name="bag-outline" size={80} color={Colors.gray} />
           <Text style={styles.emptyTitle}>Carrinho vazio</Text>
           <Text style={styles.emptyText}>
             Adicione produtos ao seu carrinho para continuar
@@ -232,7 +232,8 @@ ${items.map((item) => `${item.quantity}x ${item.product.name} - R$ ${(item.produ
                     disabled={item.quantity <= 1}
                     activeOpacity={0.7}
                   >
-                    <Minus
+                    <Ionicons
+                      name="remove"
                       size={16}
                       color={item.quantity <= 1 ? Colors.gray : Colors.white}
                     />
@@ -245,7 +246,7 @@ ${items.map((item) => `${item.quantity}x ${item.product.name} - R$ ${(item.produ
                     }
                     activeOpacity={0.7}
                   >
-                    <Plus size={16} color={Colors.white} />
+                    <Ionicons name="add" size={16} color={Colors.white} />
                   </TouchableOpacity>
                 </View>
                 <TouchableOpacity
@@ -253,7 +254,11 @@ ${items.map((item) => `${item.quantity}x ${item.product.name} - R$ ${(item.produ
                   onPress={() => removeItem(item.product.id)}
                   activeOpacity={0.7}
                 >
-                  <Trash2 size={18} color={Colors.gray} />
+                  <Ionicons
+                    name="trash-outline"
+                    size={18}
+                    color={Colors.gray}
+                  />
                 </TouchableOpacity>
               </View>
             </View>

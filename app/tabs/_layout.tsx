@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Home, Search, ShoppingCart, MapPin } from "lucide-react-native";
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import Colors from "@/constants/colors";
 import { useCart } from "@/contexts/CartContext";
@@ -57,23 +57,27 @@ export default function TabLayout() {
               resizeMode="contain"
             />
           ),
-          tabBarIcon: ({ color }) => <Home size={24} color={color} />,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="home" size={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="catalog"
         options={{
           title: "Catálogo",
-          tabBarIcon: ({ color }) => <Search size={24} color={color} />,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="search" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="cart"
         options={{
           title: "Carrinho",
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({ color, size }) => (
             <View>
-              <ShoppingCart size={24} color={color} />
+              <Ionicons name="cart" size={size} color={color} />
               <CartBadge count={itemCount} />
             </View>
           ),
@@ -83,7 +87,9 @@ export default function TabLayout() {
         name="location"
         options={{
           title: "Localização",
-          tabBarIcon: ({ color }) => <MapPin size={24} color={color} />,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="location" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>

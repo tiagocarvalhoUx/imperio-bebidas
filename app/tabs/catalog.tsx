@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter, useLocalSearchParams } from "expo-router";
-import { Search, Star } from "lucide-react-native";
+import { Ionicons } from "@expo/vector-icons";
 import Colors from "@/constants/colors";
 import { products, categories } from "@/mocks/products";
 import { Product } from "@/types";
@@ -83,7 +83,7 @@ export default function CatalogScreen() {
           {item.name}
         </Text>
         <View style={styles.ratingRow}>
-          <Star size={14} color={Colors.gold} fill={Colors.gold} />
+          <Ionicons name="star" size={14} color={Colors.gold} />
           <Text style={styles.ratingText}>{item.rating.toFixed(1)}</Text>
         </View>
         <Text style={styles.productPrice}>R$ {item.price.toFixed(2)}</Text>
@@ -98,7 +98,7 @@ export default function CatalogScreen() {
       <View style={styles.header}>
         <Text style={styles.title}>Catálogo</Text>
         <View style={styles.searchContainer}>
-          <Search size={20} color={Colors.gray} />
+          <Ionicons name="search" size={20} color={Colors.gray} />
           <TextInput
             style={styles.searchInput}
             placeholder="Buscar produtos..."

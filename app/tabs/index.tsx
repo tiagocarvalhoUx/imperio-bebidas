@@ -11,13 +11,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
-import {
-  Beer,
-  CupSoda,
-  Wine,
-  ShoppingBag,
-  MessageCircle,
-} from "lucide-react-native";
+import { Ionicons } from "@expo/vector-icons";
 import Colors from "@/constants/colors";
 import { categories, products } from "@/mocks/products";
 
@@ -76,7 +70,9 @@ export default function HomeScreen() {
                   style={styles.categoryImage}
                 />
                 <View style={styles.categoryOverlay} />
-                <Text style={styles.categoryName}>{category.name}</Text>
+                <View style={styles.categoryTextContainer}>
+                  <Text style={styles.categoryName}>{category.name}</Text>
+                </View>
               </TouchableOpacity>
             ))}
           </View>
@@ -141,7 +137,7 @@ export default function HomeScreen() {
         onPress={openWhatsApp}
         activeOpacity={0.8}
       >
-        <MessageCircle size={28} color={Colors.white} />
+        <Ionicons name="logo-whatsapp" size={28} color={Colors.white} />
       </TouchableOpacity>
     </View>
   );
@@ -243,21 +239,23 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
+  categoryTextContainer: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 12,
+  },
   categoryName: {
-    position: "absolute",
-    bottom: 16,
-    left: 12,
-    right: 12,
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: "800" as const,
     color: Colors.white,
     textAlign: "center",
     textShadowColor: "rgba(0, 0, 0, 0.9)",
     textShadowOffset: { width: 0, height: 2 },
     textShadowRadius: 8,
-    letterSpacing: 1,
+    letterSpacing: 1.2,
     textTransform: "uppercase" as const,
-    lineHeight: 18,
+    lineHeight: 16,
   },
   promoScroll: {
     paddingRight: 16,

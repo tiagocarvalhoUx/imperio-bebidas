@@ -10,14 +10,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MapView, { Marker } from "react-native-maps";
-import {
-  Phone,
-  MessageCircle,
-  Navigation,
-  MapPin,
-  Clock,
-  Star,
-} from "lucide-react-native";
+import { Ionicons } from "@expo/vector-icons";
 import Colors from "@/constants/colors";
 
 const STORE_LOCATION = {
@@ -121,7 +114,7 @@ export default function LocationScreen() {
               <View style={styles.storeInfo}>
                 <Text style={styles.storeName}>{STORE_INFO.name}</Text>
                 <View style={styles.ratingRow}>
-                  <Star size={16} color={Colors.gold} fill={Colors.gold} />
+                  <Ionicons name="star" size={16} color={Colors.gold} />
                   <Text style={styles.ratingText}>{STORE_INFO.rating}</Text>
                   <Text style={styles.reviewCount}>
                     ({STORE_INFO.reviewCount} avaliações)
@@ -133,17 +126,17 @@ export default function LocationScreen() {
             <View style={styles.divider} />
 
             <View style={styles.infoSection}>
-              <MapPin size={20} color={Colors.gold} />
+              <Ionicons name="location" size={20} color={Colors.gold} />
               <Text style={styles.infoText}>{STORE_INFO.address}</Text>
             </View>
 
             <View style={styles.infoSection}>
-              <Phone size={20} color={Colors.gold} />
+              <Ionicons name="call" size={20} color={Colors.gold} />
               <Text style={styles.infoText}>{STORE_INFO.phone}</Text>
             </View>
 
             <View style={styles.infoSection}>
-              <Clock size={20} color={Colors.gold} />
+              <Ionicons name="time-outline" size={20} color={Colors.gold} />
               <View style={styles.hoursContainer}>
                 <Text style={styles.infoText}>
                   Segunda a Sábado: 08:00 - 22:00
@@ -161,7 +154,7 @@ export default function LocationScreen() {
               activeOpacity={0.8}
             >
               <View style={styles.actionIcon}>
-                <Phone size={24} color={Colors.gold} />
+                <Ionicons name="call" size={24} color={Colors.gold} />
               </View>
               <Text style={styles.actionText}>Ligar</Text>
             </TouchableOpacity>
@@ -172,7 +165,7 @@ export default function LocationScreen() {
               activeOpacity={0.8}
             >
               <View style={styles.actionIcon}>
-                <MessageCircle size={24} color={Colors.gold} />
+                <Ionicons name="logo-whatsapp" size={24} color={Colors.gold} />
               </View>
               <Text style={styles.actionText}>WhatsApp</Text>
             </TouchableOpacity>
@@ -183,7 +176,7 @@ export default function LocationScreen() {
               activeOpacity={0.8}
             >
               <View style={styles.actionIcon}>
-                <Navigation size={24} color={Colors.gold} />
+                <Ionicons name="navigate" size={24} color={Colors.gold} />
               </View>
               <Text style={styles.actionText}>Navegar</Text>
             </TouchableOpacity>

@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter, useLocalSearchParams, Stack } from "expo-router";
-import { Star, Minus, Plus, ShoppingCart } from "lucide-react-native";
+import { Ionicons } from "@expo/vector-icons";
 import Colors from "@/constants/colors";
 import { products } from "@/mocks/products";
 import { useCart } from "@/contexts/CartContext";
@@ -78,7 +78,7 @@ export default function ProductScreen() {
               <View style={styles.titleSection}>
                 <Text style={styles.productName}>{product.name}</Text>
                 <View style={styles.ratingRow}>
-                  <Star size={18} color={Colors.gold} fill={Colors.gold} />
+                  <Ionicons name="star" size={18} color={Colors.gold} />
                   <Text style={styles.ratingText}>
                     {product.rating.toFixed(1)}
                   </Text>
@@ -171,7 +171,8 @@ export default function ProductScreen() {
               disabled={quantity <= 1}
               activeOpacity={0.7}
             >
-              <Minus
+              <Ionicons
+                name="remove"
                 size={20}
                 color={quantity <= 1 ? Colors.gray : Colors.white}
               />
@@ -182,7 +183,7 @@ export default function ProductScreen() {
               onPress={() => setQuantity((q) => q + 1)}
               activeOpacity={0.7}
             >
-              <Plus size={20} color={Colors.white} />
+              <Ionicons name="add" size={20} color={Colors.white} />
             </TouchableOpacity>
           </View>
 
@@ -191,7 +192,7 @@ export default function ProductScreen() {
             onPress={handleAddToCart}
             activeOpacity={0.8}
           >
-            <ShoppingCart size={20} color={Colors.black} />
+            <Ionicons name="cart" size={20} color={Colors.black} />
             <Text style={styles.addButtonText}>Adicionar ao Carrinho</Text>
           </TouchableOpacity>
         </SafeAreaView>
