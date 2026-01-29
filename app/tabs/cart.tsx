@@ -87,7 +87,7 @@ ${items.map((item) => `${item.quantity}x ${item.product.name} - R$ ${(item.produ
           </Text>
           <TouchableOpacity
             style={styles.browseCatalogButton}
-            onPress={() => router.push("/catalog")}
+            onPress={() => router.push("/tabs/catalog")}
             activeOpacity={0.8}
           >
             <Text style={styles.browseCatalogText}>Ver Catálogo</Text>

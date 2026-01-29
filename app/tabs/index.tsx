@@ -51,7 +51,9 @@ export default function HomeScreen() {
             style={styles.logo}
             resizeMode="contain"
           />
-          <Text style={styles.tagline}>Bebidas e Conveniência</Text>
+          <View style={styles.taglineBadge}>
+            <Text style={styles.tagline}>Bebidas e Conveniência</Text>
+          </View>
         </View>
 
         <View style={styles.section}>
@@ -166,16 +168,29 @@ const styles = StyleSheet.create({
     width: LOGO_WIDTH,
     height: LOGO_WIDTH * 0.7,
   },
+  taglineBadge: {
+    marginTop: 18,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: Colors.gold,
+    backgroundColor: "rgba(162, 156, 156, 0.207)",
+    shadowColor: Colors.gold,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 12,
+  },
   tagline: {
-    fontSize: 18,
+    fontSize: 13,
     color: Colors.gold,
-    fontWeight: "600" as const,
-    marginTop: 16,
-    letterSpacing: 2,
+    fontWeight: "800" as const,
+    letterSpacing: 3,
     textTransform: "uppercase" as const,
-    textShadowColor: "rgba(212, 175, 55, 0.4)",
+    textShadowColor: "rgba(0, 0, 0, 0.35)",
     textShadowOffset: { width: 0, height: 2 },
     textShadowRadius: 6,
+    textDecorationLine: "none",
   },
   section: {
     paddingHorizontal: 16,

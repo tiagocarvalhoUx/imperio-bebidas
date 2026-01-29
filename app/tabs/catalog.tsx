@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
-  Dimensions,
+  useWindowDimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter, useLocalSearchParams } from "expo-router";
@@ -16,15 +16,27 @@ import Colors from "@/constants/colors";
 import { products, categories } from "@/mocks/products";
 import { Product } from "@/types";
 
-const { width } = Dimensions.get("window");
-const CARD_WIDTH = (width - 48) / 2; // 2 colunas com gap de 16px e padding lateral de 16px
-const CARD_IMAGE_HEIGHT = CARD_WIDTH * 1.1; // Proporção 1:1.1 para melhor visualização mobile
-
 export default function CatalogScreen() {
   const router = useRouter();
   const params = useLocalSearchParams();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const { width } = useWindowDimensions();
+
+  const numColumns = useMemo(() => {
+    if (width >= 1200) return 5;
+    if (width >= 1024) return 4;
+    if (width >= 768) return 3;
+    return 2;
+  }, [width]);
+
+  const cardWidth = useMemo(() => {
+    const horizontalPadding = 32; // paddingHorizontal da lista (16 + 16)
+    const gap = 16; // space entre colunas
+    return (width - horizontalPadding - gap * (numColumns - 1)) / numColumns;
+  }, [width, numColumns]);
+
+  const cardImageHeight = useMemo(() => cardWidth * 1.1, [cardWidth]);
 
   // Atualizar categoria quando params mudar
   useEffect(() => {
@@ -56,13 +68,16 @@ export default function CatalogScreen() {
 
   const renderProduct = ({ item }: { item: Product }) => (
     <TouchableOpacity
-      style={styles.productCard}
+      style={[styles.productCard, { width: cardWidth }]}
       onPress={() =>
         router.push({ pathname: "/product", params: { id: item.id } })
       }
       activeOpacity={0.8}
     >
-      <Image source={item.image} style={styles.productImage} />
+      <Image
+        source={item.image}
+        style={[styles.productImage, { height: cardImageHeight }]}
+      />
       <View style={styles.productInfo}>
         <Text style={styles.productName} numberOfLines={2}>
           {item.name}
@@ -126,9 +141,9 @@ export default function CatalogScreen() {
       <FlatList
         data={filteredProducts}
         keyExtractor={(item) => item.id}
-        numColumns={2}
+        numColumns={numColumns}
         contentContainerStyle={styles.productsList}
-        columnWrapperStyle={styles.productsRow}
+        columnWrapperStyle={numColumns > 1 ? styles.productsRow : undefined}
         renderItem={renderProduct}
         ListEmptyComponent={
           <View style={styles.emptyContainer}>
@@ -212,7 +227,6 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   productCard: {
-    width: CARD_WIDTH,
     backgroundColor: Colors.surface,
     borderRadius: 16,
     overflow: "hidden",
@@ -224,7 +238,6 @@ const styles = StyleSheet.create({
   },
   productImage: {
     width: "100%",
-    height: CARD_IMAGE_HEIGHT,
     resizeMode: "cover",
   },
   productInfo: {

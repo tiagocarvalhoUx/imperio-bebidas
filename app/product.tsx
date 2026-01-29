@@ -43,7 +43,7 @@ export default function ProductScreen() {
       `${quantity}x ${product.name} adicionado ao carrinho!`,
       [
         { text: "Continuar comprando", style: "cancel" },
-        { text: "Ir ao carrinho", onPress: () => router.push("/cart") },
+        { text: "Ir ao carrinho", onPress: () => router.push("/tabs/cart") },
       ],
     );
   };
