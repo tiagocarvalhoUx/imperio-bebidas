@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Império Bebidas App",
+    "slug": "imperio-bebidas-app-vnl4bo8",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/image/favicon-imperio.png",
+    "scheme": "rork-app",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/image/splash.png",
+      
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.rork.imperio-bebidas-app-vnl4bo8"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/image/icon-imperio.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "app.rork.imperio_bebidas_app_vnl4bo8"
+    },
+    "web": {
+      "favicon": "./assets/image/favicon-imperio.png"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://rork.com/"
+        }
+      ],
+      "expo-font",
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

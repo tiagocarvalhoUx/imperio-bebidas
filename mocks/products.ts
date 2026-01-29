@@ -1,0 +1,316 @@
+import { Product, Category } from "@/types";
+
+export const categories: Category[] = [
+  {
+    id: "cervejas",
+    name: "Cervejas",
+    icon: "beer",
+    image: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400",
+  },
+  {
+    id: "refrigerantes",
+    name: "Refrigerantes",
+    icon: "cup-soda",
+    image: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=400",
+  },
+  {
+    id: "alcoolicas",
+    name: "Bebidas Alcoólicas",
+    icon: "wine",
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400",
+  },
+  {
+    id: "conveniencias",
+    name: "Conveniências",
+    icon: "shopping-bag",
+    image: "https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?w=400",
+  },
+];
+
+export const products: Product[] = [
+  // === CERVEJAS ===
+  {
+    id: "1",
+    name: "Heineken Lata 350ml",
+    category: "cervejas",
+    price: 4.5,
+    image: require("../assets/products/heineken-lata-350ml.png"),
+    description:
+      "Cerveja premium importada da Holanda. Sabor único e refrescante com notas de malte e lúpulo. Ideal para acompanhar refeições ou momentos de relaxamento.",
+    volume: "350ml",
+    alcoholContent: "5%",
+    rating: 4.8,
+    inStock: true,
+  },
+  {
+    id: "2",
+    name: "Brahma Duplo Malte 350ml",
+    category: "cervejas",
+    price: 3.2,
+    image: require("../assets/products/brahma-duplo-malte-350ml.png"),
+    description:
+      "Cerveja brasileira com duplo malte, mais encorpada e saborosa. Perfeita para churrascos e encontros com amigos.",
+    volume: "350ml",
+    alcoholContent: "4.8%",
+    rating: 4.5,
+    inStock: true,
+  },
+  {
+    id: "3",
+    name: "Skol Lata 350ml",
+    category: "cervejas",
+    price: 2.8,
+    image: require("../assets/products/skol-lata-350ml.png"),
+    description:
+      "A cerveja que desce redondo! Refrescante e leve, perfeita para qualquer ocasião. A mais vendida do Brasil.",
+    volume: "350ml",
+    alcoholContent: "4.7%",
+    rating: 4.2,
+    inStock: true,
+  },
+  {
+    id: "4",
+    name: "Corona Extra 355ml",
+    category: "cervejas",
+    price: 6.9,
+    image: require("../assets/products/corona-extra-355ml.png"),
+    description:
+      "Cerveja mexicana premium, melhor apreciada com uma rodela de limão. Sabor suave e refrescante, perfeita para dias quentes.",
+    volume: "355ml",
+    alcoholContent: "4.5%",
+    rating: 4.7,
+    inStock: true,
+  },
+  {
+    id: "5",
+    name: "Stella Artois 330ml",
+    category: "cervejas",
+    price: 5.2,
+    image: require("../assets/products/stella-artois-330ml.png"),
+    description:
+      "Cerveja belga premium com mais de 600 anos de tradição. Sabor refinado e equilibrado, ideal para momentos especiais.",
+    volume: "330ml",
+    alcoholContent: "5.2%",
+    rating: 4.9,
+    inStock: true,
+  },
+  {
+    id: "6",
+    name: "Budweiser Lata 350ml",
+    category: "cervejas",
+    price: 3.8,
+    image: require("../assets/products/budweiser-lata-350ml.png"),
+    description:
+      "A Rei das Cervejas! Cerveja americana leve e refrescante, perfeita para festas e eventos.",
+    volume: "350ml",
+    alcoholContent: "5%",
+    rating: 4.4,
+    inStock: true,
+  },
+  {
+    id: "7",
+    name: "Original Lata 350ml",
+    category: "cervejas",
+    price: 3.5,
+    image: require("../assets/products/original-lata-350ml.png"),
+    description:
+      "Cerveja brasileira com sabor marcante e equilibrado. Ótima escolha para quem busca qualidade e bom preço.",
+    volume: "350ml",
+    alcoholContent: "4.7%",
+    rating: 4.3,
+    inStock: true,
+  },
+  {
+    id: "8",
+    name: "Eisenbahn Pale Ale 355ml",
+    category: "cervejas",
+    price: 7.5,
+    image: require("../assets/products/eisenbahn-pale-ale-355ml.png"),
+    description:
+      "Cerveja artesanal brasileira com amargor equilibrado e aroma cítrico. Para apreciadores de cervejas especiais.",
+    volume: "355ml",
+    alcoholContent: "4.8%",
+    rating: 4.8,
+    inStock: true,
+  },
+
+  // === REFRIGERANTES ===
+  {
+    id: "9",
+    name: "Coca-Cola 2L",
+    category: "refrigerantes",
+    price: 8.5,
+    image: require("../assets/products/coca-cola-2l.png"),
+    description:
+      "O refrigerante mais famoso do mundo! Sabor inconfundível que combina com qualquer momento. Refresca de verdade.",
+    volume: "2L",
+    rating: 4.9,
+    inStock: true,
+  },
+  {
+    id: "10",
+    name: "Guaraná Antarctica 2L",
+    category: "refrigerantes",
+    price: 7.9,
+    image: require("../assets/products/guaraná-antarctica-2l.png"),
+    description:
+      "Sabor único 100% brasileiro, feito com o verdadeiro guaraná da Amazônia. Energia e refrescância em cada gole.",
+    volume: "2L",
+    rating: 4.8,
+    inStock: true,
+  },
+  {
+    id: "11",
+    name: "Pepsi 2L",
+    category: "refrigerantes",
+    price: 7.5,
+    image: require("../assets/products/pepsi-2l.png"),
+    description:
+      "Refrigerante de cola com sabor intenso e refrescante. Perfeito para acompanhar suas refeições.",
+    volume: "2L",
+    rating: 4.6,
+    inStock: true,
+  },
+  {
+    id: "12",
+    name: "Fanta Laranja 2L",
+    category: "refrigerantes",
+    price: 7.8,
+    image: require("../assets/products/fanta-laranja-2l.png"),
+    description:
+      "Sabor laranja vibrante e refrescante. Alegria em forma de bebida, perfeito para toda a família.",
+    volume: "2L",
+    rating: 4.7,
+    inStock: true,
+  },
+  {
+    id: "13",
+    name: "Sprite 2L",
+    category: "refrigerantes",
+    price: 7.8,
+    image: require("../assets/products/sprite-2l.png"),
+    description:
+      "Refrigerante de limão sem corantes. Transparente e extremamente refrescante, ideal para dias quentes.",
+    volume: "2L",
+    rating: 4.7,
+    inStock: true,
+  },
+  {
+    id: "14",
+    name: "Coca-Cola Zero 2L",
+    category: "refrigerantes",
+    price: 8.5,
+    image: require("../assets/products/coca-cola-zero-2l.png"),
+    description:
+      "Todo o sabor de Coca-Cola sem açúcar e zero calorias. Perfeito para quem não abre mão do sabor.",
+    volume: "2L",
+    rating: 4.8,
+    inStock: true,
+  },
+  {
+    id: "15",
+    name: "Guaraná Antarctica Zero 2L",
+    category: "refrigerantes",
+    price: 7.9,
+    image: require("../assets/products/guaraná-antarctica-zero-2l.png"),
+    description:
+      "O sabor original do Guaraná Antarctica sem açúcar. Zero calorias, 100% sabor.",
+    volume: "2L",
+    rating: 4.6,
+    inStock: true,
+  },
+  {
+    id: "16",
+    name: "H2OH! Limão 500ml",
+    category: "refrigerantes",
+    price: 4.5,
+    image: require("../assets/products/h2oh!-limão-500ml.png"),
+    description:
+      "Bebida refrescante com água gaseificada e suco de limão. Leve e hidratante.",
+    volume: "500ml",
+    rating: 4.5,
+    inStock: true,
+  },
+
+  // === BEBIDAS ALCOÓLICAS ===
+  {
+    id: "17",
+    name: "Absolut Vodka 1L",
+    category: "alcoolicas",
+    price: 89.9,
+    image: require("../assets/products/absolut-vodka-1l.png"),
+    description:
+      "Vodka sueca premium, pura e cristalina. Ideal para drinks e coquetéis sofisticados. Destilação contínua para máxima pureza.",
+    volume: "1L",
+    alcoholContent: "40%",
+    rating: 4.9,
+    inStock: true,
+  },
+  {
+    id: "18",
+    name: "Jack Daniels 1L",
+    category: "alcoolicas",
+    price: 149.9,
+    image: require("../assets/products/jack-daniels-1l.png"),
+    description:
+      "Whiskey americano Tennessee icônico. Sabor suave e marcante, envelhecido em barris de carvalho. Um clássico atemporal.",
+    volume: "1L",
+    alcoholContent: "40%",
+    rating: 5.0,
+    inStock: true,
+  },
+  {
+    id: "19",
+    name: "Smirnoff Ice 275ml",
+    category: "alcoolicas",
+    price: 5.9,
+    image: require("../assets/products/smirnoff-ice-275ml.png"),
+    description:
+      "Bebida pronta sabor limão, refrescante e leve. Perfeita para festas e baladas.",
+    volume: "275ml",
+    alcoholContent: "5%",
+    rating: 4.4,
+    inStock: true,
+  },
+  {
+    id: "20",
+    name: "Johnnie Walker Red Label 1L",
+    category: "alcoolicas",
+    price: 79.9,
+    image: require("../assets/products/johnnie-walker-red-label-1l.png"),
+    description:
+      "Whisky escocês blend de alta qualidade. Sabor vibrante e encorpado, perfeito puro ou com gelo.",
+    volume: "1L",
+    alcoholContent: "40%",
+    rating: 4.7,
+    inStock: true,
+  },
+  {
+    id: "21",
+    name: "Smirnoff Vodka 998ml",
+    category: "alcoolicas",
+    price: 49.9,
+    image: require("../assets/products/smirnoff-vodka-998ml.png"),
+    description:
+      "Vodka premium tripla destilação. Suave e versátil, ideal para drinks e misturas.",
+    volume: "998ml",
+    alcoholContent: "37.5%",
+    rating: 4.6,
+    inStock: true,
+  },
+
+  // === CONVENIÊNCIAS ===
+
+  {
+    id: "29",
+    name: "Doritos Nacho 140g",
+    category: "conveniencias",
+    price: 7.9,
+    image: require("../assets/products/doritos-nacho-140g.png"),
+    description:
+      "Salgadinho de milho sabor queijo nacho. Crocante e saboroso, sucesso garantido.",
+    volume: "140g",
+    rating: 4.9,
+    inStock: true,
+  },
+];
