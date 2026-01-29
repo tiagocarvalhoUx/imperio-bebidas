@@ -144,9 +144,24 @@ O catálogo inclui:
 
 ## 🌐 Deploy na Vercel
 
-Este projeto está configurado para deploy na Vercel com suporte à versão web via Expo.
+### ⚠️ Importante: Limitação do Expo na Web
 
-### Passos para Deploy
+Este é um app React Native otimizado para **mobile** (Expo Go). A versão web tem limitações significativas:
+
+- 🚫 Imagens locais com `require()` não funcionam na web
+- 🚫 Componentes nativos (Maps, Haptics) não têm equivalente web
+- ✅ Funciona apenas como **preview/demo** da interface
+
+### Recomendação
+
+Para produção, use:
+
+- **Mobile**: Expo Go ou build com EAS (`expo build`)
+- **Web**: Considere criar uma versão separada Next.js/React
+
+### Deploy na Vercel (Demo apenas)
+
+Se ainda quiser fazer deploy da versão web como demo:
 
 1. **Criar repositório no GitHub**
 
@@ -164,19 +179,18 @@ git push -u origin main
    - Faça login com GitHub
    - Clique em "Import Project"
    - Selecione o repositório `imperio-bebidas`
-   - Configure as variáveis (se necessário)
-   - Deploy automático será feito
+   - A Vercel usará automaticamente o `vercel.json`
+   - Build command: `npx expo export:web`
+   - Output: `dist`
 
-3. **Build e Deploy Automático**
-   - A Vercel detectará automaticamente o `vercel.json`
-   - Comando de build: `expo export -p web`
-   - Output directory: `dist`
-   - Cada push na branch `main` fará deploy automático
+3. **Teste local da versão web**
 
-### Visualização
+```bash
+npm run build-web
+npx serve dist
+```
 
-- **Mobile**: Use o Expo Go app escaneando o QR code
-- **Web**: Acesse a URL da Vercel (ex: `imperio-bebidas.vercel.app`)
+**Nota**: A versão web será apenas uma **demonstração visual**. Funcionalidades completas requerem o app mobile.
 
 ## 🔧 Configurações Importantes
 

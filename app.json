@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/image/splash.png",
-      
+
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -26,7 +26,8 @@
       "package": "app.rork.imperio_bebidas_app_vnl4bo8"
     },
     "web": {
-      "favicon": "./assets/image/favicon-imperio.png"
+      "favicon": "./assets/image/favicon-imperio.png",
+      "bundler": "metro"
     },
     "plugins": [
       [
