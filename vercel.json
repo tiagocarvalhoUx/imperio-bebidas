@@ -1,11 +1,13 @@
 {
-  "buildCommand": "expo export --platform web",
+  "buildCommand": "npx expo export --platform web",
   "outputDirectory": "dist",
-  "installCommand": "npm install && npm install -g serve",
-  "routes": [
+  "devCommand": "npx expo start --web",
+  "installCommand": "npm install",
+  "framework": null,
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
