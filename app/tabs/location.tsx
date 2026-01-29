@@ -14,10 +14,10 @@ import { Ionicons } from "@expo/vector-icons";
 import Colors from "@/constants/colors";
 
 const STORE_LOCATION = {
-  latitude: -21.2084,
-  longitude: -50.4343,
-  latitudeDelta: 0.01,
-  longitudeDelta: 0.01,
+  latitude: -21.205507,
+  longitude: -50.4620781,
+  latitudeDelta: 0.005,
+  longitudeDelta: 0.005,
 };
 
 const STORE_INFO = {
@@ -30,10 +30,11 @@ const STORE_INFO = {
 
 export default function LocationScreen() {
   const openMaps = () => {
+    const address = encodeURIComponent(STORE_INFO.address);
     const url = Platform.select({
-      ios: `maps://app?daddr=${STORE_LOCATION.latitude},${STORE_LOCATION.longitude}`,
-      android: `geo:${STORE_LOCATION.latitude},${STORE_LOCATION.longitude}?q=${STORE_LOCATION.latitude},${STORE_LOCATION.longitude}`,
-      web: `https://www.google.com/maps/dir/?api=1&destination=${STORE_LOCATION.latitude},${STORE_LOCATION.longitude}`,
+      ios: `maps://app?daddr=${address}`,
+      android: `geo:0,0?q=${address}`,
+      web: `https://www.google.com/maps/search/?api=1&query=${address}`,
     });
     if (url) {
       Linking.openURL(url);
