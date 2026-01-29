@@ -16,7 +16,7 @@ import Colors from "@/constants/colors";
 import { categories, products } from "@/mocks/products";
 
 const { width } = Dimensions.get("window");
-const CARD_WIDTH = (width - 25) / 4;
+const CARD_WIDTH = (width - 35) / 4;
 const CARD_HEIGHT = CARD_WIDTH * 1.4;
 const PROMO_CARD_WIDTH = Math.min(width * 0.4, 160);
 const LOGO_WIDTH = Math.min(width * 0.7, 280);
