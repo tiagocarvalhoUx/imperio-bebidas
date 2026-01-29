@@ -16,7 +16,7 @@ import Colors from "@/constants/colors";
 import { categories, products } from "@/mocks/products";
 
 const { width } = Dimensions.get("window");
-const CARD_WIDTH = (width - 48) / 2;
+const CARD_WIDTH = (width - 45) / 8;
 const PROMO_CARD_WIDTH = Math.min(width * 0.4, 160);
 const LOGO_WIDTH = Math.min(width * 0.7, 280);
 
@@ -216,12 +216,12 @@ const styles = StyleSheet.create({
   categoriesGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: 16,
+    gap: 12,
   },
   categoryCard: {
     width: CARD_WIDTH,
-    height: 140,
-    borderRadius: 16,
+    height: 100,
+    borderRadius: 12,
     overflow: "hidden",
     position: "relative",
     elevation: 4,
@@ -237,23 +237,23 @@ const styles = StyleSheet.create({
   },
   categoryOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0.35)",
   },
   categoryTextContainer: {
-    ...StyleSheet.absoluteFillObject,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 12,
+    position: "absolute",
+    bottom: 12,
+    left: 12,
+    right: 12,
   },
   categoryName: {
-    fontSize: 13,
-    fontWeight: "800" as const,
+    fontSize: 12,
+    fontWeight: "700" as const,
     color: Colors.white,
-    textAlign: "center",
+    textAlign: "left",
     textShadowColor: "rgba(0, 0, 0, 0.9)",
-    textShadowOffset: { width: 0, height: 2 },
-    textShadowRadius: 8,
-    letterSpacing: 1.2,
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 4,
+    letterSpacing: 0.5,
     textTransform: "uppercase" as const,
     lineHeight: 16,
   },
